@@ -1,0 +1,45 @@
+{% extends 'realty/base.html' %}
+
+{% block title %}About{% endblock %}
+{% block content %}
+<!--slider start-->
+        
+<div class="carousel slide">
+    {% for el in aboutslide %}
+        <div class="slider carousel-inner"> 
+            <div class="item">
+                <img src="{{ el.slide_image.url }}" class="d-block w-100" alt="">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>{{ el.title }}</h5>
+                    <p>{{ el.text_slide }}</p>
+                    <a href="{{ el.link_slide }}"><button type="button" class="btn btn-warning text-white"><span>{{ el.link_text }}</span></button></a> 
+                </div>
+            </div>
+        </div>  
+    {% endfor %}    
+        <button class="carousel-control-prev" type="button" onclick="previousSlide();">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" onclick="nextSlide();">
+            <span class="carousel-control-next-icon"></span>
+          </button>  
+    </div>
+   
+<!--slider start-->
+<!-- articl start-->
+<div class="container marketing">
+    {% for el in aboutart %}
+<hr class="featurette-divider">
+<div class="row featurette">
+<div id="textartmy" class="col-md-7 {% cycle 'order-md-2' '' as stripe %}">
+<h2 class="featurette-heading">{{ el.title }}&nbsp;<span class="text-muted">{{ el.mutetext }}</span></h2>
+<p class="lead">{{ el.full_text }}</p>
+</div>
+<div class="col-md-5">  
+<img src="{{ el.venue_image.url }}" alt="" class="img-thumbnail">       
+</div>
+</div>
+    {% endfor %}
+</div>
+<!-- articl end-->
+{% endblock %}
