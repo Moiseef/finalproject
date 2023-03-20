@@ -1,0 +1,63 @@
+{% extends 'realty/base.html' %}
+
+{% block title %}Portfolio{% endblock %}
+{% block content %}
+<h1>This is Portfolio</h1>
+<!--Realty block start-->
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+ <!-- card realty start-->       
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--slide start-->
+            <div class="wrape carousel slide">
+                <div class="lenta">
+            <img id="lastClone" class="d-block w-100 contslide" src="https://alexhomeinvest.com/wp-content/uploads/2023/03/img_8739-525x328.jpg" alt="copy_slide3">
+            <img class="d-block w-100 contslide"  src="https://alexhomeinvest.com/wp-content/uploads/2023/03/img_8355-525x328.jpg" alt="slide1">
+            <img class="d-block w-100 contslide" src="https://alexhomeinvest.com/wp-content/uploads/2023/03/img_8361-525x328.jpg" alt="slide2">
+            <img class="d-block w-100 contslide" src="https://alexhomeinvest.com/wp-content/uploads/2023/03/img_8739-525x328.jpg" alt="slide3">
+            <img id="firstClone" class="d-block w-100 contslide"  src="https://alexhomeinvest.com/wp-content/uploads/2023/03/img_8355-525x328.jpg" alt="copy_slide11">
+                        </div>
+                        <div class="slbtn-container">
+            <div id="prev" class="slbtn carousel-control-prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></div>
+            <div id="next" class="slbtn carousel-control-next"><span class="carousel-control-next-icon" aria-hidden="true"></span></div>
+        
+        </div>
+
+     
+            </div>
+            <!--slide end-->
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <div class="card-body">
+                <h2>Some title</h2>
+                <h4 class="text-info">price 220$</h4>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <ul class="list-inline md-mb-2 text-center">
+                <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid fa-snowflake"></i></span> </li>
+                <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid fa-car"></i></span> </li>
+                <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid fa-elevator"></i></span> </li>
+                <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid fa-water-ladder"></i></span> </li>
+            </ul>
+            <div class="mybtn mb-md-4">
+               <a href="#" class="btn btn-secondary">Add to Wishlist <i class="bi bi-star"></i></a>
+            </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+ <!-- card realty end-->         
+
+
+
+      </div>
+    </div>
+  </div>
+<!--Realty block end-->
+{% endblock %}

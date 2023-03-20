@@ -1,0 +1,138 @@
+from django.db import models
+
+# Create your models here.
+class Home_articl(models.Model):
+    title = models.CharField('Title', max_length=50)
+    mutetext = models.CharField('Mute', max_length=50)  
+    full_text = models.TextField('Articl')
+    venue_image = models.ImageField('Image', null=True, blank=True, upload_to="images/")
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'Home title'
+        verbose_name_plural = 'Home titles'
+
+class Home_slide(models.Model):
+    title = models.CharField('Title', max_length=50)
+    text_slide = models.CharField('Text', max_length=250)
+    link_text = models.CharField('Button', default='Link', max_length=50) 
+    link_slide = models.CharField('Link', max_length=50)    
+    slide_image = models.ImageField('Image', null=True, blank=True, upload_to="images/")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Home slide'
+        verbose_name = 'Home slides'    
+    
+class Logo(models.Model):
+    title = models.CharField('Title', max_length=50, default='logo')
+    logo_image = models.ImageField('Image', null=True, blank=True, upload_to="images/")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Logo'
+        verbose_name_plural = 'Logos'   
+    
+class About_articl(models.Model):
+    title = models.CharField('Title', max_length=50)
+    mutetext = models.CharField('Mute', max_length=50)  
+    full_text = models.TextField('Articl')
+    venue_image = models.ImageField('Image', null=True, blank=True, upload_to="images/")
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name = 'About aricl'
+        verbose_name_plural = 'About articles'
+
+class About_slide(models.Model):
+    title = models.CharField('Title', max_length=50)
+    text_slide = models.CharField('Text', max_length=250)
+    link_text = models.CharField('Button', default='Link', max_length=50) 
+    link_slide = models.CharField('Link', max_length=50)    
+    slide_image = models.ImageField('Image', null=True, blank=True, upload_to="images/")
+
+    def __str__(self):
+        return self.title    
+    
+    class Meta:
+        verbose_name = 'About slide'
+        verbose_name_plural = 'About slides'
+
+class Title_contact(models.Model):
+    title = models.CharField('Title', max_length=50)
+    full_text = models.TextField('Articl')                
+
+    def __str__(self):
+        return self.title    
+    
+    class Meta:
+        verbose_name = 'Contact title'
+        verbose_name_plural = 'Contact titles'
+
+class Call_us(models.Model):
+    title = models.CharField('Title', max_length=50)
+    text = models.CharField('Text', max_length=250)
+    phone_first = models.CharField('mobile', max_length=50)
+    phone_second = models.CharField('phone', max_length=50) 
+    link_fph = models.CharField('Link_mobile', default='#', max_length=50)
+    link_sph = models.CharField('Link_phone', default='#', max_length=50)       
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Call us block' 
+        verbose_name_plural = 'Call us blocks'           
+
+class Email_us(models.Model):
+    title = models.CharField('Title', max_length=50)
+    text = models.CharField('Text', max_length=250)
+    link_mail = models.CharField('Link_mail', default='#', max_length=50)
+    email_name = models.CharField('email_name', max_length=50)        
+
+    def __str__(self):
+        return self.title   
+
+    class Meta:
+        verbose_name = 'Email us block'
+        verbose_name_plural = 'Email us blocks' 
+
+class Social_us(models.Model):
+    title = models.CharField('Title', max_length=50)
+    text = models.CharField('Text', max_length=250)
+    link_face = models.CharField('Link_face', default='#', max_length=50)
+    link_inst = models.CharField('Link_inst', default='#', max_length=50)
+    link_twit = models.CharField('Link_twit', default='#', max_length=50)
+    link_in = models.CharField('Link_in', default='#', max_length=50)       
+
+    def __str__(self):
+        return self.title    
+    
+    class Meta:
+        verbose_name = 'Social us block'
+        verbose_name_plural = 'Social us blocks'
+
+class Contact_form(models.Model):
+    title = models.CharField('Title', default='Send us message', max_length=50)
+    label_name = models.CharField('Title', default='Your name', max_length=50)
+    label_email = models.CharField('Title', default='Email address', max_length=50)
+    label_mobile = models.CharField('Title', default='Mobile number', max_length=50)
+    label_message = models.CharField('Title', default='Message ', max_length=50)   
+    info = models.CharField('Text', default='By submitting this form you agree to our terms and conditions.', max_length=250)
+    label_btn = models.CharField('Title', default='Send', max_length=50)  
+         
+    def __str__(self):
+        return self.title   
+
+    class Meta:
+        verbose_name = 'Contact form'
+        verbose_name_plural = 'Contact forms'     
+    
