@@ -1,0 +1,65 @@
+{% extends 'realty/base.html' %}
+
+{% block title %}Portfolio{% endblock %}
+{% block content %}
+<h1>This is Portfolio</h1>
+<!--Realty block start-->
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+ <!-- card realty start-->
+          {% for el in card %}        
+        <div class="col">
+          <div class="card shadow-sm">
+            <!--slide start-->
+            <div class="wrape carousel slide">
+              {% if el.images %}
+                <div class="lenta">
+            <img id="lastClone" class="d-block w-100 contslide" src="{{ el.images.first.image.url }}" alt="copy_slide3">
+            <img class="d-block w-100 contslide"  src="{{ el.images.first.image.url }}" alt="slide1">
+            <img id="firstClone" class="d-block w-100 contslide"  src="{{ el.images.first.image.url }}" alt="copy_slide1">
+                        </div>
+              {% endif %}          
+                        <div class="slbtn-container">
+            <div id="prev" class="slbtn carousel-control-prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></div>
+            <div id="next" class="slbtn carousel-control-next"><span class="carousel-control-next-icon" aria-hidden="true"></span></div>
+        
+        </div>
+
+     
+            </div>
+            <!--slide end-->
+           <!-- <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+            <div class="card-body">
+                <h2>{{ el.title }}</h2>
+                <h4 class="text-info">{{ el.price }}</h4>
+              <p class="card-text">{{ el.full_text }}</p>
+              <ul class="list-inline md-mb-2 text-center">
+                <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid {{ el.facilities_fir }}"></i></span> </li>
+                <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid {{ el.facilities_sec }}"></i></span> </li>
+                <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid {{ el.facilities_th }}"></i></span> </li>
+                <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid {{ el.facilities_fou }}"></i></span> </li>
+            </ul>
+            <div class="mybtn mb-md-4">
+               <a href="#" class="btn btn-secondary">{{ el.label_btn }}<i class="bi bi-star"></i></a>
+            </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">{{ el.date }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+ <!-- card realty end-->    
+          {% endfor %}     
+
+
+
+      </div>
+    </div>
+  </div>
+<!--Realty block end-->
+{% endblock %}
