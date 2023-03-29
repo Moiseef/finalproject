@@ -1,0 +1,25 @@
+{% extends 'realty/base.html' %}
+
+{% block title %}Add object{% endblock %}
+{% block content %}
+<div class="container marketing">
+    <h1>Form add object</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" placeholder="Tltle" class="form-control" /><br>
+        <input type="number" min="0.00" max="999000.00" step="0.01" placeholder="Price" class="form-control" /><br>
+        <textarea class="form-control" placeholder="Description"></textarea><br>
+        
+        <ul class="list-inline md-mb-2 text-center">
+            <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid fa-snowflake"><input type="submit" value="air" class="border-0"></i></span> </li>
+            <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid fa-car"><input type="submit" value="garage" class="border-0"></i></span> </li>
+            <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid fa-elevator"><input type="submit" value="elevator" class="border-0"></i></span> </li>
+            <li class="list-inline-item"> <span class="px-4 mb-0"><i class="fa-solid fa-water-ladder"><input type="submit" value="pool" class="border-0"></i></span> </li>
+        </ul><br>
+        <input type="file" multiple  placeholder="Iamge" class="form-control" /><br>
+        <input type="date" class="form-control" /><br>
+        <input type="time" class="form-control" /><br>
+        <button class="btn btn-success" type="submit">Add object</button>
+    </form>
+</div>
+{% endblock %}
