@@ -1,4 +1,5 @@
 from django.db import models
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 
@@ -156,6 +157,10 @@ class Contact_form(models.Model):
         verbose_name = 'Contact form'
         verbose_name_plural = 'Contact forms'
 
+MY_CHOICES = (('item_key1', 'fa-snowflake'),
+              ('item_key2', 'fa-car'),
+              ('item_key3', 'fa-elevator'),
+              ('item_key4', 'fa-water-ladder'),)
 
 class Product(models.Model):
     title = models.CharField(max_length=150)
@@ -163,14 +168,7 @@ class Product(models.Model):
         'Articl', max_length=1000, default='full text')
     price = models.DecimalField(
         'Price', max_digits=10, decimal_places=2, default='1')
-    facilities_fir = models.CharField(
-        'facilities 1', blank=True, max_length=50, default='fa-snowflake')
-    facilities_sec = models.CharField(
-        'facilities 2', blank=True, max_length=50, default='fa-car')
-    facilities_th = models.CharField(
-        'facilities 3', blank=True, max_length=50, default='fa-elevator')
-    facilities_fou = models.CharField(
-        'facilities 4', blank=True, max_length=50, default='fa-water-ladder')
+    facilities = MultiSelectField(choices=MY_CHOICES, max_choices=4, max_length=50, default=None)
     label_btn = models.CharField(
         'Button', default='Add to Wishlist', max_length=50)
     date = models.DateTimeField('Publication date', null=True, blank=True)
